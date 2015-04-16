@@ -20,8 +20,20 @@ def DisplayWhoseTurnItIs(WhoseTurn):
     print("It is Black's turn")
 
 def GetTypeOfGame():
-  TypeOfGame = input("Do you want to play the sample game (enter Y for Yes)? ")
-  return TypeOfGame.upper()[0]
+  valid = False
+  while valid == False:
+    TypeOfGame = input("Do you want to play the sample game (enter Y for Yes)? ")
+    if TypeOfGame.upper()[0] == "Y":
+      TypeOfGame = TypeOfGame.upper()[0]
+      valid = True
+      return TypeOfGame
+    elif TypeOfGame.upper()[0] == "N":
+      TypeOfGame = TypeOfGame.upper()[0]
+      valid = True
+      return TypeOfGame
+    else:
+      print("That is invalid. ")
+      valid = False
 
 def DisplayWinner(WhoseTurn):
   if WhoseTurn == "W":
